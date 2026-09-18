@@ -1,0 +1,32 @@
+:root {
+   --bg-h: 115;
+   --bg-s: 100%;
+   --bg-light-l: 95%;
+   --bg-dark-l: 3%;
+}
+
+/*hsl(115 100% 18.2%)*/
+
+/* Light */
+html[data-theme="light"] {
+   --pico-background-color: hsl(var(--bg-h) var(--bg-s) var(--bg-light-l)) !important;
+   --pico-card-background-color: color-mix(in hsl, var(--pico-background-color), black 10%) !important;
+   --pico-form-element-background-color: color-mix(in hsl, var(--pico-background-color), black 1p%) !important;
+   --pico-dropdown-background-color: color-mix(in hsl, var(--pico-background-color), black 10%) !important;
+   --pico-code-background-color: color-mix(in hsl, var(--pico-background-color), black 10%) !important;
+   --pico-mark-background-color: color-mix(in hsl, var(--pico-background-color), black 10%) !important;
+}
+
+/* Dark */
+html[data-theme="dark"] {
+   --pico-background-color: hsl(var(--bg-h) var(--bg-s) var(--bg-dark-l)) !important;
+   --pico-card-background-color: color-mix(in hsl, var(--pico-background-color), white 5%) !important;
+   --pico-form-element-background-color: color-mix(in hsl, var(--pico-background-color), white 5%) !important;
+   --pico-dropdown-background-color: color-mix(in hsl, var(--pico-background-color), white 9%) !important;
+   --pico-code-background-color: color-mix(in hsl, var(--pico-background-color), white 7%) !important;
+   --pico-mark-background-color: color-mix(in hsl, var(--pico-background-color), white 7%) !important;
+}
+
+.container {
+   max-width: 40pc;
+}
