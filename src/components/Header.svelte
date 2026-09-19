@@ -1,7 +1,8 @@
 <script>
-   let { targetDomin = $bindable(), onfind, loading } = $props();
+   let { targetDomin = $bindable(), isInvalidDomin = $bindable(), onfind, loading } = $props();
 
    function onkeydown({ key }) {
+      isInvalidDomin = null;
       if (key === "Enter") onfind();
    }
 </script>
@@ -19,7 +20,13 @@
 
 <header>
    <div role="search">
-      <input type="search" {onkeydown} bind:value={targetDomin} placeholder="e.g. target.com" />
+      <input
+         type="search"
+         aria-invalid={isInvalidDomin}
+         {onkeydown}
+         bind:value={targetDomin}
+         placeholder="e.g. target.com"
+      />
       <button onclick={onfind} aria-busy={loading}>Find</button>
    </div>
 </header>
@@ -29,5 +36,9 @@
 <style>
    img {
       border-radius: 9px;
+   }
+
+   hr {
+      margin-top: 0;
    }
 </style>

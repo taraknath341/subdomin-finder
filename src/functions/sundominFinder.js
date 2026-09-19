@@ -5,7 +5,7 @@ async function subdominFinder(domin) {
       },
    });
    if (!response.ok) {
-      throw new Error("Response invalid");
+      throw new Error("API ERROR");
    }
    const subdomins = await response.text();
    return subdomins.split("\n").filter((i) => i);
