@@ -33,7 +33,7 @@
 <Header bind:targetDomin bind:isInvalidDomin {onfind} {loading} />
 
 <footer>
-   {#each subdomins as subdomin}
+   {#each subdomins as subdomin (subdomin)}
       <div role="group">
          <input type="text" readonly value={subdomin} />
          <a href="https://{subdomin}" role="button">Visit</a>
